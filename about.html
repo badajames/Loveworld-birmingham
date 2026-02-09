@@ -25,7 +25,8 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="index.html" class="logo"><img src="assets/images/LW-LOGO-2.png" alt="Loveworld Birmingham" style="height: 50px; width: auto;">
+            <a href="index.html" class="logo"><img src="assets/images/LW-LOGO-2.png" alt="Loveworld Birmingham"
+                    style="height: 50px; width: auto;">
             </a>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -162,9 +163,12 @@
             <div>
                 <h4 style="color: var(--color-text-white);">Connect</h4>
                 <div style="display: flex; gap: 1rem;">
-                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"><i data-lucide="facebook" size="20" color="#999"></i></a>
-                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"><i data-lucide="instagram" size="20" color="#999"></i></a>
-                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"><i data-lucide="youtube" size="20" color="#999"></i></a>
+                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"><i
+                            data-lucide="facebook" size="20" color="#999"></i></a>
+                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"><i
+                            data-lucide="instagram" size="20" color="#999"></i></a>
+                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"><i
+                            data-lucide="youtube" size="20" color="#999"></i></a>
                 </div>
             </div>
         </div>
@@ -178,6 +182,24 @@
     <script src="scripts/main.js"></script>
     <script>
         lucide.createIcons();
+
+        // Toggle Statement of Faith
+        function toggleStatementOfFaith() {
+            const fullStatement = document.getElementById('fullStatement');
+            const btn = document.getElementById('readMoreBtn');
+
+            if (fullStatement.style.display === 'none') {
+                fullStatement.style.display = 'block';
+                btn.style.display = 'none';
+                // Smooth scroll to the expanded content
+                setTimeout(() => {
+                    fullStatement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                fullStatement.style.display = 'none';
+                btn.style.display = 'inline-block';
+            }
+        }
     </script>
 </body>
 

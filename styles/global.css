@@ -342,8 +342,8 @@ h3 {
 
     /* Hero section mobile optimization */
     .hero {
-        min-height: 60vh;
-        padding: 3rem 0 2rem;
+        min-height: 50vh !important;
+        padding: 2rem 0 1.5rem !important;
     }
 
     .hero-content span {

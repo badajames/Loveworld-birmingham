@@ -231,6 +231,38 @@ h3 {
     color: var(--color-text-white) !important;
 }
 
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-text-white);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     :root {
@@ -255,6 +287,10 @@ h3 {
     .navbar .container {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
     }
 
     .nav-links {

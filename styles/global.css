@@ -375,8 +375,58 @@ h3 {
 
     .grid-split {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
         text-align: center;
+    }
+
+    .grid-split>div {
+        max-width: 100%;
+    }
+
+    /* Section header mobile optimization */
+    .section-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left;
+    }
+
+    .section-header a {
+        font-size: 0.9rem !important;
+    }
+
+    /* Typography mobile adjustments */
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* PCDL section mobile optimization */
+    .grid-split h3 {
+        font-size: 1.4rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .grid-split p {
+        font-size: 0.95rem !important;
+    }
+
+    .grid-split .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    /* Logo mobile sizing */
+    .logo img {
+        height: 40px !important;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 1.5rem;
     }
 
     /* Ensure images in grid-split don't overflow */

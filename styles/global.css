@@ -333,6 +333,42 @@ h3 {
         font-size: 1rem;
     }
 
+    /* Hero section mobile optimization */
+    .hero {
+        min-height: 80vh;
+        padding: 6rem 0 4rem;
+    }
+
+    .hero-content span {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .hero-content div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100%;
+    }
+
+    .hero-content .btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
     .section {
         padding: 3rem 0;
     }

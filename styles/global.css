@@ -97,11 +97,20 @@ h3 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    padding: 0 var(--spacing-md);
 }
 
 .section {
     padding: var(--spacing-xl) 0;
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+}
+
+.bg-alt {
+    background-color: var(--color-surface);
 }
 
 /* Button Component */

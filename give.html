@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give - Loveworld Birmingham</title>
+    <meta name="description" content="Support the mission and ministry of Loveworld Birmingham.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        .give-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .give-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .give-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .give-icon {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h3>Loveworld Birmingham</h3>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="live.html">Live</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="give.html" class="active btn-sm">Give</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h1>Generosity</h1>
+            <p class="lead">"For where your treasure is, there your heart will be also." <br><span
+                    style="font-size: 0.9em; color: var(--color-text-light);">Matthew 6:21</span></p>
+
+            <p style="margin-top: 2rem;">Your generosity helps us continue our mission of leading people into a growing
+                relationship with Jesus Christ. We are grateful for your support.</p>
+        </div>
+
+        <div class="container">
+            <div class="give-options">
+                <!-- Partnership, Offering & Tithe -->
+                <div class="give-card">
+                    <div class="give-icon">
+                        <i data-lucide="heart" size="48"></i>
+                    </div>
+                    <h3>Partnership, Offering & Tithe</h3>
+                    <div style="text-align: left; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
+                        <p><strong>Account Name:</strong> Blw UK Zone 1 LTD</p>
+                        <p><strong>Sort Code:</strong> 08-71-99</p>
+                        <p><strong>Account No:</strong> 75654929</p>
+                        <p><strong>Reference:</strong> POA/003</p>
+                    </div>
+                </div>
+
+                <!-- Rhapsody of Reality -->
+                <div class="give-card">
+                    <div class="give-icon">
+                        <i data-lucide="book-open" size="48"></i>
+                    </div>
+                    <h3>Rhapsody of Reality</h3>
+                    <div style="text-align: left; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
+                        <p><strong>Account Name:</strong> Blw UK Zone 1 LTD</p>
+                        <p><strong>Sort Code:</strong> 08-71-99</p>
+                        <p><strong>Account No:</strong> 13202029</p>
+                        <p><strong>Reference:</strong> POA/003</p>
+                    </div>
+                </div>
+
+                <!-- New Media TV -->
+                <div class="give-card">
+                    <div class="give-icon">
+                        <i data-lucide="tv" size="48"></i>
+                    </div>
+                    <h3>New Media TV</h3>
+                    <div style="text-align: left; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
+                        <p><strong>Account Name:</strong> TI LIVE</p>
+                        <p><strong>Sort Code:</strong> 40-38-22</p>
+                        <p><strong>Account No:</strong> 31562061</p>
+                        <p><strong>Reference:</strong> POA/003</p>
+                    </div>
+                </div>
+
+                <!-- Kingspay -->
+                <div class="give-card">
+                    <div class="give-icon">
+                        <i data-lucide="smartphone" size="48"></i>
+                    </div>
+                    <h3>Kingspay</h3>
+                    <p style="margin-top: 1rem; color: var(--color-text-light);">Use the Kingspay app to give easily.
+                    </p>
+                    <p style="margin-top: 1rem; font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">LWUK1
+                    </p>
+                </div>
+
+                <!-- PayPal -->
+                <div class="give-card">
+                    <div class="give-icon">
+                        <i data-lucide="credit-card" size="48"></i>
+                    </div>
+                    <h3>PayPal</h3>
+                    <p style="margin-top: 1rem; color: var(--color-text-light);">Give via PayPal to:</p>
+                    <p style="margin-top: 0.5rem; font-weight: 600; color: var(--color-primary);">office@blwukzone1.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-primary); color: var(--color-text-white); padding: 4rem 0;">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+            <div>
+                <h4 style="color: var(--color-text-white);">Loveworld Birmingham</h4>
+                <p style="color: #999; font-size: 0.9rem;">Giving your life a meaning.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Service Times</h4>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 9:00 AM (1st Service)</p>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 11:00 AM (2nd Service)</p>
+                <p style="color: #999; font-size: 0.9rem;">Wednesdays: 7:00 PM</p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Contact</h4>
+                <p style="color: #999; font-size: 0.9rem;">38 Smith Street, Birmingham B19 3EN</p>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <a href="mailto:info@blwbirmingham.org" style="color: #ccc;">info@blwbirmingham.org</a>
+                </p>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.25rem;">
+                    <a href="tel:+447715461017" style="color: #ccc;">+44 7715 461017</a><br>
+                    <a href="tel:+447982611020" style="color: #ccc;">+44 7982 611020</a>
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Connect</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <i data-lucide="facebook" size="20" color="#999"></i>
+                    <i data-lucide="instagram" size="20" color="#999"></i>
+                    <i data-lucide="youtube" size="20" color="#999"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; text-align: center; color: #aaa; font-size: 0.8rem;">
+            &copy; 2026 Loveworld Birmingham. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

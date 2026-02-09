@@ -342,8 +342,8 @@ h3 {
 
     /* Hero section mobile optimization */
     .hero {
-        min-height: 80vh;
-        padding: 6rem 0 4rem;
+        min-height: 60vh;
+        padding: 5rem 0 3rem;
     }
 
     .hero-content span {
@@ -535,6 +535,7 @@ h3 {
 .hero h1 {
     color: #fff;
 }
+
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
@@ -616,38 +617,41 @@ h3 {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.hero-content > * {
+.hero-content>* {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.hero-content > *:nth-child(1) {
+.hero-content>*:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.hero-content > *:nth-child(2) {
+.hero-content>*:nth-child(2) {
     animation-delay: 0.3s;
 }
 
-.hero-content > *:nth-child(3) {
+.hero-content>*:nth-child(3) {
     animation-delay: 0.5s;
 }
 
-.hero-content > *:nth-child(4) {
+.hero-content>*:nth-child(4) {
     animation-delay: 0.7s;
 }
 
 /* Card Hover Effects */
-.card, [style*="border-radius: 8px"] {
+.card,
+[style*="border-radius: 8px"] {
     transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 }
 
-.card:hover, [style*="border-radius: 8px"]:hover {
+.card:hover,
+[style*="border-radius: 8px"]:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
 }
@@ -668,6 +672,6 @@ p a:hover {
 }
 
 /* Improved Section Spacing */
-.section + .section {
+.section+.section {
     margin-top: 0;
 }

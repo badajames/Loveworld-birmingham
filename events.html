@@ -73,6 +73,35 @@
             align-items: center;
             gap: 0.5rem;
         }
+
+        @media (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .event-date {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* Center content */
+                align-items: center;
+                /* Vertically center */
+                gap: 0.5rem;
+                padding: 0.5rem;
+                min-width: auto;
+                /* Reset min-width */
+            }
+
+            .event-day {
+                font-size: 1.25rem;
+            }
+
+            .event-month {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -165,13 +194,20 @@
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Service Times</h4>
-                <p style="color: #999; font-size: 0.9rem;">Sundays: 10:00 AM</p>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 9:00 AM (1st Service)</p>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 11:00 AM (2nd Service)</p>
                 <p style="color: #999; font-size: 0.9rem;">Wednesdays: 7:00 PM</p>
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Contact</h4>
-                <p style="color: #999; font-size: 0.9rem;">38 Smith Street<br>Birmingham, B19 3EN<br>United Kingdom</p>
-                <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">info@loveworldbirmingham.org</p>
+                <p style="color: #999; font-size: 0.9rem;">38 Smith Street, Birmingham B19 3EN</p>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <a href="mailto:info@blwbirmingham.org" style="color: #ccc;">info@blwbirmingham.org</a>
+                </p>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.25rem;">
+                    <a href="tel:+447715461017" style="color: #ccc;">+44 7715 461017</a><br>
+                    <a href="tel:+447982611020" style="color: #ccc;">+44 7982 611020</a>
+                </p>
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Connect</h4>

@@ -113,6 +113,13 @@ h3 {
     background-color: var(--color-surface);
 }
 
+.grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
 /* Button Component */
 .btn {
     display: inline-block;
@@ -149,9 +156,14 @@ h3 {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1rem 0;
-    background: rgba(0, 51, 102, 0.95);
+    /* Ensure it's above hero content */
+    padding: 1.5rem 0;
+    /* Add padding for spacing */
+    background: rgba(0, 34, 68, 0.85);
+    /* Dark blue with transparency */
     backdrop-filter: blur(10px);
+    /* Blur effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar .container {
@@ -160,9 +172,12 @@ h3 {
     align-items: center;
 }
 
-.navbar .logo h3 {
-    color: #fff;
-    margin: 0;
+.logo h3 {
+    color: var(--color-text-white);
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .navbar.scrolled {
@@ -181,25 +196,103 @@ h3 {
 
 .nav-links {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 2rem;
     align-items: center;
 }
 
-.nav-links a {
+.nav-links li a {
     font-weight: 500;
-    color: #fff;
+    color: var(--color-text-white);
+    /* White text for contrast */
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
 }
 
-.nav-links a:hover {
+.nav-links li a:hover,
+.nav-links li a.active {
+    opacity: 1;
     color: var(--color-accent);
 }
 
 .btn-sm {
-    padding: 0.5rem 1rem;
-    background-color: var(--color-accent);
-    color: #fff !important;
-    border-radius: 4px;
-    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    background-color: var(--color-accent) !important;
+    /* Force gold bg */
+    border-color: var(--color-accent) !important;
+    color: var(--color-text-main) !important;
+    /* Dark text on gold */
+}
+
+.btn-sm:hover {
+    background-color: var(--color-accent-hover) !important;
+    border-color: var(--color-accent-hover) !important;
+    color: var(--color-text-white) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-xl: 4rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        position: relative;
+        /* Remove absolute positioning on mobile */
+        background: var(--color-primary);
+        /* Solid background */
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    /* Ensure images in grid-split don't overflow */
+    .grid-split img {
+        margin: 0 auto;
+    }
+
+    /* Reset order for Global Leadership so image is on top logically */
+    .grid-split>div {
+        order: unset !important;
+    }
 }
 
 /* Hero Section */

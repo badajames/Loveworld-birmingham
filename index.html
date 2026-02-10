@@ -162,7 +162,7 @@
     </section>
 
     <!-- Community Photo Gallery -->
-    <section class="section" style="background-color: var(--color-surface);">
+    <section class="section fade-in-section" style="background-color: var(--color-surface);">
         <div class="container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
                 <h2 style="color: var(--color-primary);">Our Community in Action</h2>
@@ -178,7 +178,7 @@
                     <img src="assets/images/worship-recording.jpg" alt="Community member recording worship service"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Modern Worship</p>
                         <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Engaging with God's presence
                         </p>
@@ -192,9 +192,9 @@
                     <img src="assets/images/congregation.jpg" alt="Diverse congregation during worship service"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Our Family</p>
-                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">A diverse, loving community
+                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Diverse and united in Christ
                         </p>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                     <img src="assets/images/community-outreach.jpg" alt="Healing Streams community outreach event"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Reaching Out</p>
                         <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Taking the gospel to the
                             streets</p>
@@ -220,7 +220,7 @@
                     <img src="assets/images/prayer-ministry.jpg" alt="Prayer ministry on the streets"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Prayer & Ministry</p>
                         <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Touching lives with God's love
                         </p>
@@ -235,7 +235,7 @@
                         alt="Foundation School graduation ceremony"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Foundation School</p>
                         <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Equipping believers for
                             ministry</p>
@@ -249,7 +249,7 @@
                     <img src="assets/images/award-ceremony.jpg" alt="Church award ceremony celebrating excellence"
                         style="width: 100%; height: 300px; object-fit: cover; display: block;">
                     <div
-                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); padding: 1.5rem 1rem 1rem; color: white;">
                         <p style="font-weight: 600; margin: 0;">Celebrating Excellence</p>
                         <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Recognizing achievements</p>
                     </div>
@@ -415,6 +415,33 @@
                 }, 5000);
             });
         }
+    </script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optionally unobserve after animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            fadeInSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
 </body>
 

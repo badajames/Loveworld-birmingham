@@ -161,6 +161,75 @@
         </div>
     </section>
 
+    <!-- Community Photo Gallery -->
+    <section class="section" style="background-color: var(--color-surface);">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <h2 style="color: var(--color-primary);">Our Community in Action</h2>
+                <p style="color: var(--color-text-light);">Experience the vibrant life of Loveworld Birmingham - from
+                    worship to outreach, we're making an impact together.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <!-- Image 1: Worship Recording -->
+                <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <img src="assets/images/worship-recording.jpg" alt="Community member recording worship service"
+                        style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        <p style="font-weight: 600; margin: 0;">Modern Worship</p>
+                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Engaging with God's presence
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image 2: Congregation -->
+                <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <img src="assets/images/congregation.jpg" alt="Diverse congregation during worship service"
+                        style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        <p style="font-weight: 600; margin: 0;">Our Family</p>
+                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">A diverse, loving community
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image 3: Community Outreach -->
+                <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <img src="assets/images/community-outreach.jpg" alt="Healing Streams community outreach event"
+                        style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        <p style="font-weight: 600; margin: 0;">Reaching Out</p>
+                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Taking the gospel to the
+                            streets</p>
+                    </div>
+                </div>
+
+                <!-- Image 4: Prayer Ministry -->
+                <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <img src="assets/images/prayer-ministry.jpg" alt="Prayer ministry on the streets"
+                        style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1.5rem 1rem 1rem; color: white;">
+                        <p style="font-weight: 600; margin: 0;">Prayer & Ministry</p>
+                        <p style="font-size: 0.85rem; margin: 0.25rem 0 0; opacity: 0.9;">Touching lives with God's love
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PCDL Messages - Year of Manifestation -->
     <section class="section">
         <div class="container">
@@ -206,6 +275,21 @@
                 <h4 style="color: var(--color-text-white);">Loveworld Birmingham</h4>
                 <p style="color: #999; font-size: 0.9rem;">Giving your life a meaning.</p>
             </div>
+
+            <!-- Newsletter Sign-up -->
+            <div>
+                <h4 style="color: var(--color-text-white);">Stay Connected</h4>
+                <p style="color: #999; font-size: 0.9rem; margin-bottom: 1rem;">Get updates and encouragement.</p>
+                <form id="newsletterForm" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <input type="email" id="newsletterEmail" placeholder="Your email" required
+                        style="padding: 0.75rem; border-radius: 4px; border: none; font-size: 0.9rem; font-family: inherit;">
+                    <button type="submit" class="btn btn-accent"
+                        style="padding: 0.75rem 1.5rem; font-size: 0.9rem; width: 100%;">Subscribe</button>
+                    <p id="newsletterMessage"
+                        style="font-size: 0.85rem; margin: 0; display: none; color: var(--color-accent);"></p>
+                </form>
+            </div>
+
             <div>
                 <h4 style="color: var(--color-text-white);">Service Times</h4>
                 <p style="color: #999; font-size: 0.9rem;">Sundays: 9:00 AM (1st Service)</p>
@@ -279,6 +363,30 @@
                 behavior: 'smooth'
             });
         });
+
+        // Newsletter Form Handler
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('newsletterEmail').value;
+                const message = document.getElementById('newsletterMessage');
+
+                // Here you would normally send to your email service (Mailchimp, etc.)
+                // For now, we'll just show a success message
+                message.style.display = 'block';
+                message.style.color = 'var(--color-accent)';
+                message.textContent = 'Thank you for subscribing! ✓';
+
+                // Clear form
+                newsletterForm.reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    message.style.display = 'none';
+                }, 5000);
+            });
+        }
     </script>
 </body>
 

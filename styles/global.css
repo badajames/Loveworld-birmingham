@@ -346,7 +346,11 @@ h3 {
         padding: 1rem 0;
         font-size: 1rem;
         color: var(--color-text-white) !important;
-        /* Force white text on mobile menu panel */
+    }
+
+    /* Override scrolled state for mobile menu - keep text white */
+    .navbar.scrolled .nav-links li a {
+        color: var(--color-text-white) !important;
     }
 
     .hero-content h1 {

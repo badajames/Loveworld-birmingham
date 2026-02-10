@@ -306,6 +306,16 @@ h3 {
         display: flex;
     }
 
+    /* Make hamburger menu visible on mobile */
+    .menu-toggle span {
+        background: var(--color-text-white);
+    }
+
+    /* Critical: Change hamburger to dark when scrolled (white background) */
+    .navbar.scrolled .menu-toggle span {
+        background: var(--color-primary) !important;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -335,6 +345,8 @@ h3 {
         display: block;
         padding: 1rem 0;
         font-size: 1rem;
+        color: var(--color-text-white) !important;
+        /* Force white text on mobile menu panel */
     }
 
     .hero-content h1 {

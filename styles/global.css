@@ -201,6 +201,12 @@ h3 {
     color: var(--color-text-main);
 }
 
+/* Fix hamburger menu visibility when scrolled on mobile */
+.navbar.scrolled .menu-toggle span {
+    background: var(--color-primary);
+}
+
+
 .nav-links {
     display: flex;
     gap: 2rem;

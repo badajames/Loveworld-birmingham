@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Connected | Loveworld Birmingham</title>
+    <meta name="description" content="Watching Healing Streams with Pastor Chris? Leave your details and we will invite you to our online services and special events.">
+    <link rel="canonical" href="https://loveworldbirmingham.org/connect.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loveworldbirmingham.org/connect.html">
+    <meta property="og:title" content="Stay Connected | Loveworld Birmingham">
+    <meta property="og:description" content="Joining us for Healing Streams? Leave your details and we will invite you to our online services and special events.">
+    <meta property="og:image" content="https://loveworldbirmingham.org/assets/images/healing-streams.png">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Loveworld Birmingham">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles/global.css">
+
+    <style>
+        .connect-hero {
+            background: linear-gradient(160deg, #002244 0%, #003366 55%, #00284d 100%);
+            color: #fff;
+            padding: 7rem 0 3rem;
+        }
+        .connect-hero h1 { color: #fff; margin: 0 0 1rem; line-height: 1.15; }
+        .connect-hero h1 span { color: var(--color-accent); display: block; }
+        .connect-hero p { color: #c9d4e2; max-width: 34rem; margin: 0; }
+
+        .connect-wrap {
+            max-width: 34rem;
+            margin: -2.5rem auto 4rem;
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-top: 4px solid var(--color-accent);
+            border-radius: 8px;
+            padding: 2.25rem;
+            box-shadow: 0 12px 34px rgba(0, 34, 68, 0.12);
+        }
+        .field { margin-bottom: 1.35rem; }
+        .field label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--color-primary);
+            margin-bottom: 0.45rem;
+        }
+        .field input[type="text"],
+        .field input[type="email"],
+        .field select {
+            width: 100%;
+            padding: 0.85rem 0.9rem;
+            font: inherit;
+            font-size: 1rem;
+            color: var(--color-text-main);
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .field input:focus, .field select:focus {
+            outline: 3px solid rgba(212, 175, 55, 0.45);
+            outline-offset: 1px;
+            border-color: var(--color-accent);
+        }
+        .optional { font-weight: 400; color: var(--color-text-light); font-size: 0.85rem; }
+
+        .consent {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            background: #fdf8e8;
+            border: 1px solid var(--color-accent);
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .consent input[type="checkbox"] {
+            margin: 0.2rem 0 0;
+            width: 1.15rem;
+            height: 1.15rem;
+            flex-shrink: 0;
+            accent-color: var(--color-primary);
+        }
+        .consent label { font-size: 0.93rem; line-height: 1.55; color: var(--color-text-main); margin: 0; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            background: var(--color-primary);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+        .submit-btn:hover:not(:disabled) { background: var(--color-primary-dark); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .form-note { font-size: 0.82rem; color: var(--color-text-light); margin-top: 1rem; text-align: center; }
+        .form-note a { color: var(--color-primary); }
+
+        .form-error {
+            display: none;
+            background: #fdeaea;
+            border: 1px solid #d9534f;
+            color: #a9332f;
+            border-radius: 5px;
+            padding: 0.9rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.93rem;
+        }
+
+        .thanks { display: none; text-align: center; padding: 1rem 0; }
+        .thanks .tick {
+            width: 62px; height: 62px; margin: 0 auto 1.25rem;
+            border-radius: 50%; background: #fdf8e8;
+            border: 2px solid var(--color-accent);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--color-primary);
+        }
+        .thanks h2 { color: var(--color-primary); margin: 0 0 0.75rem; }
+        .thanks p { color: var(--color-text-light); margin: 0 0 1.5rem; }
+
+        .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+
+        @media (max-width: 600px) {
+            .connect-hero { padding: 6rem 0 2.5rem; }
+            .connect-wrap { margin: -1.75rem 1rem 3rem; padding: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="assets/images/LW-LOGO-2.png" alt="Loveworld Birmingham"
+                    style="height: 50px; width: auto;">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="live.html">Live</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="give.html" class="btn-sm">Give</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="connect-hero">
+        <div class="container">
+            <h1>Stay Connected<span>with Loveworld Birmingham</span></h1>
+            <p>Watching Healing Streams with Pastor Chris? Leave your details below and we will invite
+               you to our online services and special events. It takes about twenty seconds.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="connect-wrap">
+            <div class="form-error" id="formError" role="alert"></div>
+
+            <form id="connectForm" novalidate>
+                <div class="field">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" name="firstName" autocomplete="given-name"
+                           required maxlength="60" placeholder="Your first name">
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" autocomplete="email"
+                           required maxlength="120" placeholder="you@example.com" inputmode="email">
+                </div>
+
+                <div class="field">
+                    <label for="country">Country <span class="optional">(optional)</span></label>
+                    <input type="text" id="country" name="country" autocomplete="country-name"
+                           maxlength="60" placeholder="United Kingdom">
+                </div>
+
+                <div class="hp" aria-hidden="true">
+                    <label for="website">Leave this field empty</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="consent">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">Yes, Loveworld Birmingham may email me about online services
+                        and special events. We will not share my details with anyone else and I can
+                        unsubscribe at any time.</label>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Keep me connected</button>
+
+                <p class="form-note">We will only ever email you about our own services and events.
+                    Read our <a href="privacy.html">privacy notice</a>.</p>
+            </form>
+
+            <div class="thanks" id="thanks">
+                <div class="tick"><i data-lucide="check" style="width:30px;height:30px;"></i></div>
+                <h2>You're connected</h2>
+                <p>Thank you. We will be in touch with details of our next online service.
+                   God bless you.</p>
+                <a href="events.html" class="btn btn-accent">See what's coming up</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: var(--color-primary); color: var(--color-text-white); padding: 4rem 0;">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+            <div>
+                <h4 style="color: var(--color-text-white);">Loveworld Birmingham</h4>
+                <p style="color: #999; font-size: 0.9rem;">Giving your life a meaning.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Service Times</h4>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 9:00 AM (1st Service)</p>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 11:00 AM (2nd Service)</p>
+                <p style="color: #999; font-size: 0.9rem;">Wednesdays: 7:00 PM</p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Contact</h4>
+                <p style="color: #999; font-size: 0.9rem;">38 Smith Street, Birmingham B19 3EN</p>
+                <p style="color: #999; font-size: 0.9rem; margin-top: 0.25rem;">
+                    <a href="tel:+447540849509" style="color: #ccc;">+44 7540 849509</a><br>
+                    <a href="tel:+447482299317" style="color: #ccc;">+44 7482 299317</a>
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-text-white);">Connect</h4>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"
+                        style="color: #999;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"
+                        style="color: #999;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"
+                        style="color: #999;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; text-align: center; color: #aaa; font-size: 0.8rem;">
+            &copy; 2026 Loveworld Birmingham. All rights reserved. &middot;
+            <a href="privacy.html" style="color: #ccc;">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // ===================================================================
+        // PASTE YOUR APPS SCRIPT WEB APP URL BETWEEN THE QUOTES BELOW.
+        // It looks like: https://script.google.com/macros/s/AKfyc.../exec
+        // ===================================================================
+        var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzv1cjAaVRBbR5fQLKMhTEQ5vPcK3tvp4TYi3rxSxIWAghMERwvmPR1xvvqcY1tenuEzQ/exec';
+
+        (function () {
+            if (window.lucide) lucide.createIcons();
+
+            var form = document.getElementById('connectForm');
+            var btn = document.getElementById('submitBtn');
+            var errBox = document.getElementById('formError');
+            var thanks = document.getElementById('thanks');
+
+            function showError(msg) {
+                errBox.textContent = msg;
+                errBox.style.display = 'block';
+                errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                errBox.style.display = 'none';
+
+                var firstName = document.getElementById('firstName').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var country = document.getElementById('country').value.trim();
+                var consent = document.getElementById('consent').checked;
+                var website = document.getElementById('website').value;
+
+                if (!firstName) { return showError('Please enter your first name.'); }
+                if (!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email)) {
+                    return showError('Please enter a valid email address.');
+                }
+                if (!consent) {
+                    return showError('Please tick the box to let us know we can email you.');
+                }
+                if (ENDPOINT.indexOf('PASTE_YOUR') === 0) {
+                    return showError('This form is not connected yet. Please let us know at info@loveworldbirmingham.org.');
+                }
+
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+
+                fetch(ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        firstName: firstName,
+                        email: email,
+                        country: country,
+                        consent: consent,
+                        website: website,
+                        source: 'connect.html'
+                    })
+                })
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    if (data && data.ok) {
+                        form.style.display = 'none';
+                        thanks.style.display = 'block';
+                        if (window.lucide) lucide.createIcons();
+                        thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        btn.disabled = false;
+                        btn.textContent = 'Keep me connected';
+                        showError((data && data.error) || 'Something went wrong. Please try again.');
+                    }
+                })
+                .catch(function () {
+                    btn.disabled = false;
+                    btn.textContent = 'Keep me connected';
+                    showError('We could not reach the server. Please check your connection and try again.');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

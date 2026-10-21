@@ -4,57 +4,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stream - Loveworld Birmingham</title>
-    <meta name="description" content="Watch our live services every Sunday at 10:00 AM. Join the online community.">
+    <!-- Primary SEO -->
+    <title>Watch Live | Loveworld Birmingham - Live Stream Church Service</title>
+    <meta name="description" content="Watch Loveworld Birmingham live online. Join our Sunday services at 9 AM & 11 AM and Wednesday service at 7 PM from anywhere in the world.">
+    <link rel="canonical" href="https://loveworldbirmingham.org/live.html">
+
+    <!-- Open Graph (Facebook, WhatsApp previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loveworldbirmingham.org/live.html">
+    <meta property="og:title" content="Watch Live | Loveworld Birmingham - Live Stream Church Service">
+    <meta property="og:description" content="Watch Loveworld Birmingham live online. Join our Sunday services at 9 AM & 11 AM and Wednesday service at 7 PM from anywhere in the world.">
+    <meta property="og:image" content="https://loveworldbirmingham.org/assets/images/worship-recording.jpg">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Loveworld Birmingham">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Watch Live | Loveworld Birmingham - Live Stream Church Service">
+    <meta name="twitter:description" content="Watch Loveworld Birmingham live online. Join our Sunday services at 9 AM & 11 AM and Wednesday service at 7 PM from anywhere in the world.">
+    <meta name="twitter:image" content="https://loveworldbirmingham.org/assets/images/worship-recording.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Styles -->
-
-    <!-- Favicon -->
+    <!-- Favicon (Google Search, browsers, mobile) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <link rel="stylesheet" href="styles/global.css">
     <style>
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 aspect ratio */
-            height: 0;
+        .live-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 70px;
+            text-align: center;
+        }
+
+        .live-section .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #C9A84E;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .live-section .page-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 6px 0;
+            color: #C9A84E;
+        }
+
+        .live-section .page-title .word-live {
+            font-style: italic;
+        }
+
+        /* ── Badge ── */
+        .stream-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 14px auto 0;
+            padding: 8px 22px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .stream-badge.is-live {
+            background: rgba(229, 57, 53, 0.15);
+            border: 1px solid rgba(229, 57, 53, 0.35);
+            color: #E53935;
+        }
+
+        .stream-badge.is-offline {
+            background: rgba(201, 168, 78, 0.1);
+            border: 1px solid rgba(201, 168, 78, 0.2);
+            color: #C9A84E;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .is-live .badge-dot {
+            background: #E53935;
+            box-shadow: 0 0 8px rgba(229, 57, 53, 0.5);
+            animation: dot-blink 1.4s ease-in-out infinite;
+        }
+
+        .is-offline .badge-dot {
+            background: #C9A84E;
+            opacity: 0.5;
+        }
+
+        @keyframes dot-blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* ── Player card ── */
+        .player-card {
+            margin-top: 36px;
+            border-radius: 14px;
             overflow: hidden;
-            background: #000;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: #0E1E30;
+            border: 1px solid rgba(201, 168, 78, 0.12);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .offline-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .player-inner {
+            padding: 44px 24px 36px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            background: #1a1a1a;
-            color: #fff;
             text-align: center;
+        }
+
+        .play-circle {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            border: 2px solid #C9A84E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .play-circle svg {
+            width: 24px;
+            height: 24px;
+            fill: #C9A84E;
+            margin-left: 3px;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+
+        .card-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #7B8FA3;
+            margin-bottom: 32px;
+        }
+
+        /* ── Join Live button (shown during service) ── */
+        .join-live-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background: #C9A84E;
+            color: #0B1929;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            transition: background 0.2s;
+        }
+
+        .join-live-btn:hover {
+            background: #D4B65E;
+        }
+
+        .join-live-btn.visible {
+            display: inline-flex;
+        }
+
+        .join-live-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #0B1929;
+        }
+
+        /* ── Countdown ── */
+        .countdown-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 32px;
+        }
+
+        .cd-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 52px;
+        }
+
+        .cd-num {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(30px, 7vw, 40px);
+            font-weight: 700;
+            color: #C9A84E;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .cd-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5A7085;
+            margin-top: 5px;
+        }
+
+        .cd-sep {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 300;
+            color: rgba(201, 168, 78, 0.3);
+            line-height: 1;
+            padding-top: 2px;
+        }
+
+        /* ── Service cards ── */
+        .svc-cards {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .svc-card {
+            background: rgba(201, 168, 78, 0.06);
+            border: 1px solid rgba(201, 168, 78, 0.15);
+            border-radius: 10px;
+            padding: 14px 24px;
+            text-align: center;
+            flex: 1;
+            min-width: 130px;
+            max-width: 200px;
+        }
+
+        .svc-day {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84E;
+            margin-bottom: 5px;
+        }
+
+        .svc-time {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        /* ── Status bar ── */
+        .status-bar {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(201, 168, 78, 0.08);
+            background: #0B1825;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .status-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #3A4F63;
+            flex-shrink: 0;
+        }
+
+        .status-dot.live {
+            background: #E53935;
+            box-shadow: 0 0 8px rgba(229, 57, 53, 0.5);
+            animation: dot-blink 1.4s ease-in-out infinite;
+        }
+
+        .status-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #5A7085;
+            white-space: nowrap;
+        }
+
+        .status-right {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            color: #3A4F63;
+            white-space: nowrap;
+        }
+
+        /* ── Sermons link ── */
+        .sermons-link {
+            margin-top: 24px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #5A7085;
+        }
+
+        .sermons-link a {
+            color: #C9A84E;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sermons-link a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .live-section {
+                padding: 36px 16px 50px;
+            }
+
+            .player-inner {
+                padding: 32px 16px 28px;
+            }
+
+            .svc-card {
+                padding: 12px 16px;
+            }
+
+            .status-bar {
+                justify-content: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -85,30 +408,86 @@
     </nav>
 
     <!-- Main Content -->
-    <section class="section" style="padding-top: 120px;">
-        <div class="container">
-            <h1 style="text-align: center; margin-bottom: 2rem;">Live Worship</h1>
+    <div class="live-section">
 
-            <div class="video-container">
-                <!-- Replace with actual Restream embed code when available -->
-                <div class="offline-placeholder">
-                    <i data-lucide="video-off" size="48" style="margin-bottom: 1rem;"></i>
-                    <h2>Stream Offline</h2>
-                    <p id="nextServiceText">Loading next service...</p>
-                    <p><em>(Restream Embed Placeholder)</em></p>
+        <span class="section-label">Loveworld Birmingham</span>
+        <h1 class="page-title">Watch <span class="word-live">Live</span></h1>
+
+        <div class="stream-badge is-offline" id="streamBadge">
+            <div class="badge-dot"></div>
+            <span id="badgeText">Next Service Soon</span>
+        </div>
+
+        <div class="player-card">
+            <div class="player-inner">
+
+                <div class="play-circle">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
                 </div>
-                <!-- Example Restream Embed (Commented out) -->
-                <!-- <iframe src="https://embed.restream.io/player/..." width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
+
+                <div class="card-title" id="cardTitle">Next Service</div>
+                <div class="card-subtitle" id="cardSubtitle">Join us for worship</div>
+
+                <!-- This button appears during service times -->
+                <a class="join-live-btn" id="joinBtn"
+                    href="https://www.youtube.com/channel/UC75YCZejBWbqSv48RVIRi0w/live" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    Join Live Service
+                </a>
+
+                <div class="countdown-row" id="countdownRow">
+                    <div class="cd-unit">
+                        <div class="cd-num" id="cDays">00</div>
+                        <div class="cd-label">Days</div>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit">
+                        <div class="cd-num" id="cHours">00</div>
+                        <div class="cd-label">Hours</div>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit">
+                        <div class="cd-num" id="cMins">00</div>
+                        <div class="cd-label">Mins</div>
+                    </div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit">
+                        <div class="cd-num" id="cSecs">00</div>
+                        <div class="cd-label">Secs</div>
+                    </div>
+                </div>
+
+                <div class="svc-cards">
+                    <div class="svc-card">
+                        <div class="svc-day">Sunday</div>
+                        <div class="svc-time">9:00 AM & 11:00 AM</div>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-day">Wednesday</div>
+                        <div class="svc-time">7:00 PM</div>
+                    </div>
+                </div>
+
             </div>
 
-            <div style="margin-top: 3rem; text-align: center;">
-                <h3 id="nextServiceHeading">Next Service: Loading...</h3>
-                <p id="countdown" style="font-size: 1.1rem; color: var(--color-accent); margin: 1rem 0;"></p>
-                <p>Can't make it? <a href="sermons.html" style="color: var(--color-accent); font-weight: 600;">Watch
-                        past sermons</a>.</p>
+            <div class="status-bar">
+                <div class="status-left">
+                    <div class="status-dot" id="statusDot"></div>
+                    <div class="status-label" id="statusText">Offline</div>
+                </div>
+                <div class="status-right">Loveworld Birmingham</div>
             </div>
         </div>
-    </section>
+
+        <div class="sermons-link">
+            Can't make it? <a href="https://loveworldbirmingham.org/sermons.html">Watch past sermons</a>.
+        </div>
+
+    </div>
 
     <!-- Footer -->
     <footer style="background-color: var(--color-primary); color: var(--color-text-white); padding: 4rem 0;">
@@ -120,7 +499,7 @@
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Service Times</h4>
-                <p style="color: #999; font-size: 0.9rem;">Sundays: 10:00 AM</p>
+                <p style="color: #999; font-size: 0.9rem;">Sundays: 9:00 AM & 11:00 AM</p>
                 <p style="color: #999; font-size: 0.9rem;">Wednesdays: 7:00 PM</p>
             </div>
             <div>
@@ -130,13 +509,35 @@
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Connect</h4>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"><i
-                            data-lucide="facebook" size="20" color="#999"></i></a>
-                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"><i
-                            data-lucide="instagram" size="20" color="#999"></i></a>
-                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"><i
-                            data-lucide="youtube" size="20" color="#999"></i></a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#1877F2'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#E4405F'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -145,126 +546,139 @@
             &copy; 2026 Loveworld Birmingham. All rights reserved.
         </div>
     </footer>
+
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i data-lucide="arrow-up" size="24"></i>
     </button>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/447982611020" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+    <a href="https://wa.me/447540849509" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
         </svg>
     </a>
 
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
     <script>
-        // Service Schedule
-        const services = [
-            { day: 0, hour: 9, minute: 0, name: 'Sunday 1st Service', time: '9:00 AM' },
-            { day: 0, hour: 11, minute: 0, name: 'Sunday 2nd Service', time: '11:00 AM' },
-            { day: 3, hour: 19, minute: 0, name: 'Wednesday Midweek Service', time: '7:00 PM' }
+        lucide.createIcons();
+
+        // =====================================================
+        // CONFIGURATION
+        // =====================================================
+
+        // Your YouTube channel live page (auto-shows current stream)
+        const YOUTUBE_LIVE_URL = 'https://www.youtube.com/channel/UC75YCZejBWbqSv48RVIRi0w/live';
+
+        // Service schedule (day: 0=Sunday ... 6=Saturday)
+        // Add any special programmes here too
+        const SERVICE_SCHEDULE = [
+            { day: 0, hour: 9, minute: 0, duration: 120, label: 'Sunday Service' },   // 9AM–11AM
+            { day: 0, hour: 11, minute: 0, duration: 180, label: 'Sunday Service' },  // 11AM–2PM
+            { day: 3, hour: 19, minute: 0, duration: 150, label: 'Midweek Service' }, // 7PM–9:30PM
         ];
+
+        // Force live mode for testing (set to true to test live UI)
+        const FORCE_LIVE = false;
+
+        // =====================================================
+        // LOGIC
+        // =====================================================
+
+        function isServiceTime() {
+            if (FORCE_LIVE) return true;
+            const now = new Date();
+            const currentDay = now.getDay();
+            const currentMins = now.getHours() * 60 + now.getMinutes();
+
+            for (const svc of SERVICE_SCHEDULE) {
+                if (currentDay === svc.day) {
+                    const start = svc.hour * 60 + svc.minute;
+                    // Show as live 15 mins before service starts
+                    const earlyStart = start - 15;
+                    const end = start + (svc.duration || 120);
+                    if (currentMins >= earlyStart && currentMins <= end) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function updateUI() {
+            const badge = document.getElementById('streamBadge');
+            const badgeText = document.getElementById('badgeText');
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+            const joinBtn = document.getElementById('joinBtn');
+            const countdownRow = document.getElementById('countdownRow');
+            const cardTitle = document.getElementById('cardTitle');
+            const cardSubtitle = document.getElementById('cardSubtitle');
+
+            if (isServiceTime()) {
+                badge.className = 'stream-badge is-live';
+                badgeText.textContent = 'Live Now';
+                statusDot.classList.add('live');
+                statusText.textContent = 'Live Now';
+                joinBtn.classList.add('visible');
+                countdownRow.style.display = 'none';
+                cardTitle.textContent = "We're Live";
+                cardSubtitle.textContent = 'Click below to join the service';
+            } else {
+                badge.className = 'stream-badge is-offline';
+                badgeText.textContent = 'Next Service Soon';
+                statusDot.classList.remove('live');
+                statusText.textContent = 'Offline';
+                joinBtn.classList.remove('visible');
+                countdownRow.style.display = 'flex';
+                cardTitle.textContent = 'Next Service';
+                cardSubtitle.textContent = 'Join us for worship';
+            }
+        }
 
         function getNextService() {
             const now = new Date();
-            const currentDay = now.getDay();
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-
-            // Find next service
-            let nextService = null;
-            let minDiff = Infinity;
-
-            for (let i = 0; i < 7; i++) { // Check next 7 days
-                services.forEach(service => {
-                    const serviceDate = new Date(now);
-                    let daysToAdd = (service.day - currentDay + 7) % 7;
-
-                    // If it's today but service time has passed, look for next week
-                    if (daysToAdd === 0) {
-                        const serviceTimeInMinutes = service.hour * 60 + service.minute;
-                        const currentTimeInMinutes = currentHour * 60 + currentMinute;
-                        if (currentTimeInMinutes >= serviceTimeInMinutes) {
-                            daysToAdd = 7;
-                        }
-                    }
-
-                    serviceDate.setDate(serviceDate.getDate() + daysToAdd);
-                    serviceDate.setHours(service.hour, service.minute, 0, 0);
-
-                    const diff = serviceDate - now;
-                    if (diff > 0 && diff < minDiff) {
-                        minDiff = diff;
-                        nextService = {
-                            ...service,
-                            date: serviceDate
-                        };
-                    }
-                });
-            }
-
-            return nextService;
-        }
-
-        function updateNextService() {
-            const nextService = getNextService();
-            if (nextService) {
-                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-                const dayName = days[nextService.date.getDay()];
-                const monthName = months[nextService.date.getMonth()];
-                const date = nextService.date.getDate();
-
-                // Update text elements
-                document.getElementById('nextServiceText').textContent = `Join us ${dayName} at ${nextService.time}`;
-                document.getElementById('nextServiceHeading').textContent = `Next Service: ${dayName}, ${monthName} ${date} at ${nextService.time}`;
-
-                // Update countdown
-                updateCountdown(nextService.date);
-            }
-        }
-
-        function updateCountdown(serviceDate) {
-            const countdownEl = document.getElementById('countdown');
-
-            function update() {
-                const now = new Date();
-                const diff = serviceDate - now;
-
-                if (diff <= 0) {
-                    countdownEl.textContent = 'Service is happening now!';
-                    updateNextService(); // Refresh to get next service
-                    return;
+            let nearest = null, nearestDiff = Infinity;
+            for (let w = 0; w < 2; w++) {
+                for (const s of SERVICE_SCHEDULE) {
+                    const t = new Date(now);
+                    let d = s.day - now.getDay();
+                    if (d < 0) d += 7;
+                    d += w * 7;
+                    t.setDate(now.getDate() + d);
+                    t.setHours(s.hour, s.minute, 0, 0);
+                    const diff = t - now;
+                    if (diff > 0 && diff < nearestDiff) { nearestDiff = diff; nearest = t; }
                 }
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-                let countdownText = '';
-                if (days > 0) {
-                    countdownText = `${days} day${days > 1 ? 's' : ''}, ${hours} hour${hours !== 1 ? 's' : ''}`;
-                } else if (hours > 0) {
-                    countdownText = `${hours} hour${hours !== 1 ? 's' : ''}, ${minutes} minute${minutes !== 1 ? 's' : ''}`;
-                } else {
-                    countdownText = `${minutes} minute${minutes !== 1 ? 's' : ''}`;
-                }
-
-                countdownEl.textContent = `Starts in ${countdownText}`;
             }
-
-            update();
-            setInterval(update, 60000); // Update every minute
+            return nearest;
         }
 
-        // Initialize
-        updateNextService();
+        function updateCountdown() {
+            const next = getNextService();
+            if (!next) return;
+            let diff = Math.max(0, Math.floor((next - new Date()) / 1000));
+            const d = Math.floor(diff / 86400); diff %= 86400;
+            const h = Math.floor(diff / 3600); diff %= 3600;
+            const m = Math.floor(diff / 60);
+            const s = diff % 60;
+            document.getElementById('cDays').textContent = String(d).padStart(2, '0');
+            document.getElementById('cHours').textContent = String(h).padStart(2, '0');
+            document.getElementById('cMins').textContent = String(m).padStart(2, '0');
+            document.getElementById('cSecs').textContent = String(s).padStart(2, '0');
+        }
 
-        // Back to Top Button
+        updateUI();
+        updateCountdown();
+        setInterval(() => {
+            updateUI();
+            updateCountdown();
+        }, 1000);
+
+        // Back to Top Logic
         const backToTop = document.getElementById('backToTop');
-
         if (backToTop) {
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
@@ -273,19 +687,10 @@
                     backToTop.classList.remove('visible');
                 }
             });
-
             backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-    </script>
-    <!-- Scripts -->
-    <script src="scripts/main.js"></script>
-    <script>
-        lucide.createIcons();
     </script>
 </body>
 

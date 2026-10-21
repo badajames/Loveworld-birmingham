@@ -4,8 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - Loveworld Birmingham</title>
-    <meta name="description" content="Upcoming events and gatherings at Loveworld Birmingham.">
+    <!-- Primary SEO -->
+    <title>Events | Loveworld Birmingham - Church Events in Birmingham</title>
+    <meta name="description" content="Upcoming events at Loveworld Birmingham. Join us for Sunday services, cell meetings and more. 38 Smith Street, B19 3EN.">
+    <link rel="canonical" href="https://loveworldbirmingham.org/events.html">
+
+    <!-- Open Graph (Facebook, WhatsApp previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loveworldbirmingham.org/events.html">
+    <meta property="og:title" content="Healing Streams Live Healing Services | Loveworld Birmingham">
+    <meta property="og:description" content="Join Pastor Chris for 3 days of Healing Streams Live Healing Services! Fri 23 – Sun 25 October 2026. Watch live at Loveworld Birmingham or stream online.">
+    <meta property="og:image" content="https://loveworldbirmingham.org/assets/images/healing-streams.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Loveworld Birmingham">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Healing Streams Live Healing Services | Loveworld Birmingham">
+    <meta name="twitter:description" content="3 days of miracles, healing & the Word with Pastor Chris. Fri 23 – Sun 25 October 2026. Watch live or stream online!">
+    <meta name="twitter:image" content="https://loveworldbirmingham.org/assets/images/healing-streams.png">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Preconnect & Pre-DNS for Kingsforms to speed up redirection on click -->
+    <link rel="dns-prefetch" href="https://kingsforms.online">
+    <link rel="preconnect" href="https://kingsforms.online" crossorigin>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,12 +57,17 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Styles -->
-    
-    <!-- Favicon -->
+
+    <!-- Favicon (Google Search, browsers, mobile) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <link rel="stylesheet" href="styles/global.css">
     <style>
+        /* ── Events List (recurring events) ── */
         .events-list {
             margin-top: 2rem;
             max-width: 800px;
@@ -89,13 +135,10 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                /* Center content */
                 align-items: center;
-                /* Vertically center */
                 gap: 0.5rem;
                 padding: 0.5rem;
                 min-width: auto;
-                /* Reset min-width */
             }
 
             .event-day {
@@ -106,6 +149,363 @@
                 font-size: 1rem;
             }
         }
+
+        /* ── Back to School Featured Event ── */
+        @keyframes bts-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.85; }
+        }
+        @keyframes bts-shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes bts-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes bts-countdown-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,78,0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(201,168,78,0); }
+        }
+
+        .bts-hero {
+            position: relative;
+            background: linear-gradient(145deg, #001a33 0%, #003366 40%, #002855 70%, #001229 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,26,51,0.4), 0 0 0 1px rgba(201,168,78,0.15);
+        }
+
+        /* Decorative orbs */
+        .bts-hero::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,78,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .bts-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,78,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .bts-hero-inner {
+            position: relative;
+            z-index: 1;
+            padding: 3rem;
+        }
+
+        .bts-badge-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .bts-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(201,168,78,0.15);
+            border: 1px solid rgba(201,168,78,0.4);
+            color: #C9A84E;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+        }
+
+        .bts-badge--urgent {
+            background: rgba(220,53,69,0.15);
+            border-color: rgba(220,53,69,0.5);
+            color: #ff6b7a;
+            animation: bts-pulse 2s ease-in-out infinite;
+        }
+
+        .bts-title {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 0.25rem;
+        }
+        .bts-title span {
+            display: block;
+            background: linear-gradient(90deg, #C9A84E, #E8D48B, #C9A84E);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: bts-shimmer 4s linear infinite;
+        }
+
+        .bts-subtitle {
+            color: #a0b8d0;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .bts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* Info column */
+        .bts-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bts-info-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .bts-info-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(201,168,78,0.3);
+        }
+
+        .bts-info-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(201,168,78,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #C9A84E;
+        }
+
+        .bts-info-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7a9bbc;
+            margin-bottom: 2px;
+        }
+
+        .bts-info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Highlight pills */
+        .bts-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .bts-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #c0d5e8;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .bts-highlight svg {
+            width: 14px;
+            height: 14px;
+            color: #C9A84E;
+        }
+
+        /* Countdown */
+        .bts-countdown {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .bts-countdown-item {
+            text-align: center;
+            background: rgba(201,168,78,0.08);
+            border: 1px solid rgba(201,168,78,0.2);
+            border-radius: 10px;
+            padding: 0.6rem 0.9rem;
+            min-width: 60px;
+            animation: bts-countdown-pulse 3s ease-in-out infinite;
+        }
+
+        .bts-countdown-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #C9A84E;
+            line-height: 1;
+        }
+
+        .bts-countdown-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7a9bbc;
+            margin-top: 4px;
+        }
+
+        /* Registration column */
+        .bts-register-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bts-register-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .bts-register-title {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .bts-register-secure {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #5cb85c;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .bts-form-wrapper {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            position: relative;
+        }
+
+        .bts-form-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+
+        /* Fallback if iframe fails */
+        .bts-form-fallback {
+            padding: 2rem;
+            text-align: center;
+            display: none;
+        }
+
+        .bts-form-fallback p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .bts-btn-register {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #C9A84E, #E8D48B, #C9A84E);
+            background-size: 200% auto;
+            color: #003366;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(201,168,78,0.4);
+            animation: bts-shimmer 3s linear infinite;
+        }
+        .bts-btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201,168,78,0.5);
+        }
+
+        .bts-btn-external {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1px solid rgba(201,168,78,0.4);
+            color: #C9A84E;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .bts-btn-external:hover {
+            background: rgba(201,168,78,0.1);
+            border-color: rgba(201,168,78,0.7);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 900px) {
+            .bts-grid {
+                grid-template-columns: 1fr;
+            }
+            .bts-hero-inner {
+                padding: 2rem 1.5rem;
+            }
+            .bts-form-wrapper iframe {
+                height: 600px;
+            }
+        }
+        @media (max-width: 480px) {
+            .bts-hero-inner {
+                padding: 1.5rem 1rem;
+            }
+            .bts-countdown {
+                gap: 0.5rem;
+            }
+            .bts-countdown-item {
+                padding: 0.5rem 0.6rem;
+                min-width: 50px;
+            }
+            .bts-countdown-num {
+                font-size: 1.2rem;
+            }
+            .bts-info-card {
+                padding: 0.75rem 1rem;
+            }
+            .bts-form-wrapper iframe {
+                height: 550px;
+            }
+        }
     </style>
 </head>
 
@@ -114,7 +514,8 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="index.html" class="logo"><img src="assets/images/LW-LOGO-2.png" alt="Loveworld Birmingham" style="height: 50px; width: auto;">
+            <a href="index.html" class="logo"><img src="assets/images/LW-LOGO-2.png" alt="Loveworld Birmingham"
+                    style="height: 50px; width: auto;">
             </a>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -127,6 +528,7 @@
                 <li><a href="live.html">Live</a></li>
                 <li><a href="sermons.html">Sermons</a></li>
                 <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
                 <li><a href="give.html" class="btn-sm">Give</a></li>
             </ul>
         </div>
@@ -137,6 +539,357 @@
         <div class="container">
             <h1>Upcoming Events</h1>
             <p>Gather with us throughout the week.</p>
+
+            <!-- ══════════════════════════════════════════════════════════
+                 BACK TO SCHOOL COMMUNITY GIVEAWAY — auto-hides after 25 Aug 2026
+                 ══════════════════════════════════════════════════════════ -->
+            <div class="bts-hero" id="btsEvent" data-event-date="2026-08-25">
+                <div class="bts-hero-inner">
+
+                    <!-- Badge row -->
+                    <div class="bts-badge-row">
+                        <span class="bts-badge">★ Featured Event</span>
+                        <span class="bts-badge">🎓 Free Community Event</span>
+                        <span class="bts-badge bts-badge--urgent">🔥 Limited Spaces Available</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="bts-title">
+                        Back to School
+                        <span>Community Giveaway</span>
+                    </h2>
+                    <p class="bts-subtitle">
+                        100 families will receive <strong style="color:#C9A84E;">back-to-school shopping vouchers</strong> to help prepare for the new school year. Registration required — first come, first served.
+                    </p>
+
+                    <!-- Two column grid: Info + CTA -->
+                    <div class="bts-grid">
+
+                        <!-- LEFT: Event details -->
+                        <div class="bts-info-cards">
+
+                            <!-- Date -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Date</div>
+                                    <div class="bts-info-value">Sunday, 23 August 2026</div>
+                                </div>
+                            </div>
+
+                            <!-- Time -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Time</div>
+                                    <div class="bts-info-value">10:00 AM prompt</div>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Location</div>
+                                    <div class="bts-info-value">Loveworld Birmingham<br><span style="font-weight: 400; font-size: 0.85rem; color: #a0b8d0;">38 Smith Street, Newtown, Birmingham B19 3EN</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Contact</div>
+                                    <div class="bts-info-value"><a href="tel:+447482299317" style="color: #ffffff; text-decoration: none;">07482 299317</a></div>
+                                </div>
+                            </div>
+
+                            <!-- Highlight pills -->
+                            <div class="bts-highlights">
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                    Helping Families
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                                    Shopping Vouchers
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    100 Families
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                    Free Event
+                                </span>
+                            </div>
+
+                            <!-- Countdown -->
+                            <div class="bts-countdown" id="btsCountdown">
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="btsCountDays">--</div>
+                                    <div class="bts-countdown-label">Days</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="btsCountHours">--</div>
+                                    <div class="bts-countdown-label">Hours</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="btsCountMins">--</div>
+                                    <div class="bts-countdown-label">Mins</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="btsCountSecs">--</div>
+                                    <div class="bts-countdown-label">Secs</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Registration CTA -->
+                        <div class="bts-register-col">
+                            <div class="bts-register-header">
+                                <span class="bts-register-title">Register Now</span>
+                                <span class="bts-register-secure">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                    Secure
+                                </span>
+                            </div>
+
+                            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+
+                                <!-- Icon -->
+                                <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(201,168,78,0.15); display: flex; align-items: center; justify-content: center;">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="8.5" cy="7" r="4"/>
+                                        <line x1="20" y1="8" x2="20" y2="14"/>
+                                        <line x1="23" y1="11" x2="17" y2="11"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Secure Your Spot</h3>
+                                    <p style="color: #a0b8d0; font-size: 0.9rem; line-height: 1.5; max-width: 280px; margin: 0 auto;">Spaces are limited to <strong style="color: #C9A84E;">100 families</strong>. Register now to ensure your family receives back-to-school shopping vouchers.</p>
+                                </div>
+
+                                <!-- Main CTA Button -->
+                                <a href="https://kingsforms.online/birminghamoutreach" target="_blank" class="bts-btn-register" style="width: 100%; justify-content: center; padding: 1.1rem 2rem; font-size: 1.1rem;">
+                                    Register Now →
+                                </a>
+
+                                <p style="color: #5a7a94; font-size: 0.75rem; margin: 0;">First come, first served · Free event · No cost</p>
+
+                            </div>
+                        </div>
+
+
+                    </div><!-- /bts-grid -->
+
+                </div><!-- /bts-hero-inner -->
+            </div><!-- /bts-hero -->
+
+            <!-- Featured event template (commented out for future use) -->
+            <!-- To add a new featured event, use this template:
+            <div class="featured-event" data-event-date="YYYY-MM-DD" style="background: linear-gradient(135deg, #003366 0%, #001a33 100%); border-radius: 14px; padding: 2.5rem; margin-bottom: 2.5rem; color: white; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,168,78,0.08); pointer-events: none;"></div>
+                <div style="display: inline-block; background: rgba(201,168,78,0.2); border: 1px solid rgba(201,168,78,0.5); color: #C9A84E; font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 1.25rem;">Featured Upcoming Event</div>
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: flex-start;">
+                    <div style="text-align: center; background: #C9A84E; color: #003366; border-radius: 10px; padding: 0.75rem 1.25rem; min-width: 70px; flex-shrink: 0;">
+                        <div style="font-size: 2.2rem; font-weight: 800; line-height: 1;">DAY</div>
+                        <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px;">MONTH</div>
+                    </div>
+                    <div>
+                        <h2 style="color: #C9A84E; margin-bottom: 0.5rem; font-size: clamp(1.3rem, 3vw, 1.75rem);">Event Title</h2>
+                        <p style="color: #a0b8d0; margin-bottom: 1.25rem; font-size: 0.9rem;">Day, Date Month Year</p>
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem; color: #c0d5e8; font-size: 0.9rem;">Time</div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem; color: #c0d5e8; font-size: 0.9rem;">Location</div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#" target="_blank" style="display: inline-block; background: #C9A84E; color: #003366; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 6px; font-size: 0.9rem;">Register Now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <!-- ══════════════════════════════════════════════════════════
+                 HEALING STREAMS LIVE HEALING SERVICES — auto-hides after 25 Oct 2026
+                 ══════════════════════════════════════════════════════════ -->
+            <div class="bts-hero" id="hsEvent" data-event-date="2026-10-25" style="background: linear-gradient(145deg, #0a0a2e 0%, #0d1b3e 30%, #142952 60%, #0a0a2e 100%);">
+                <div class="bts-hero-inner">
+
+                    <!-- Badge row -->
+                    <div class="bts-badge-row">
+                        <span class="bts-badge">★ Featured Event</span>
+                        <span class="bts-badge">🌍 Watch Live Online</span>
+                        <span class="bts-badge bts-badge--urgent">🔴 3-Day Event</span>
+                    </div>
+
+                    <!-- Title + Logo -->
+                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                        <img src="assets/images/healing-streams.png" alt="Healing Streams Live Healing Services" style="width: 120px; height: 120px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 4px 20px rgba(201,168,78,0.3));">
+                        <div>
+                            <h2 class="bts-title" style="margin-bottom: 0;">
+                                Healing Streams
+                                <span>Live Healing Services</span>
+                            </h2>
+                            <p style="color: #a0b8d0; font-size: 1.1rem; font-weight: 500; margin-top: 0.25rem;">with <strong style="color: #C9A84E;">Pastor Chris</strong></p>
+                        </div>
+                    </div>
+
+                    <p class="bts-subtitle">
+                        Experience <strong style="color:#C9A84E;">3 extraordinary days</strong> of miracles, healing, and the Word of God. Watch live from Loveworld Birmingham or stream online from anywhere in the world.
+                    </p>
+
+                    <!-- Two column grid: Info + CTA -->
+                    <div class="bts-grid">
+
+                        <!-- LEFT: Event details -->
+                        <div class="bts-info-cards">
+
+                            <!-- Date -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Date</div>
+                                    <div class="bts-info-value">Friday 23 – Sunday 25 October 2026</div>
+                                </div>
+                            </div>
+
+                            <!-- Schedule -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Schedule</div>
+                                    <div class="bts-info-value">
+                                        Fri: 4:00 PM (GMT+1)<br>
+                                        <span style="font-weight: 400; font-size: 0.85rem; color: #a0b8d0;">Sat & Sun: Sessions throughout the day</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Venue -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Watch At</div>
+                                    <div class="bts-info-value">Loveworld Birmingham<br><span style="font-weight: 400; font-size: 0.85rem; color: #a0b8d0;">38 Smith Street, Newtown, B19 3EN &bull; or stream online</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="bts-info-card">
+                                <div class="bts-info-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="bts-info-label">Contact</div>
+                                    <div class="bts-info-value"><a href="tel:+447482299317" style="color: #ffffff; text-decoration: none;">07482 299317</a></div>
+                                </div>
+                            </div>
+
+                            <!-- Highlight pills -->
+                            <div class="bts-highlights">
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                    Live Healing
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    Miracles
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    Watch Online
+                                </span>
+                                <span class="bts-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    3-Day Event
+                                </span>
+                            </div>
+
+                            <!-- Countdown -->
+                            <div class="bts-countdown" id="hsCountdown">
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="hsCountDays">--</div>
+                                    <div class="bts-countdown-label">Days</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="hsCountHours">--</div>
+                                    <div class="bts-countdown-label">Hours</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="hsCountMins">--</div>
+                                    <div class="bts-countdown-label">Mins</div>
+                                </div>
+                                <div class="bts-countdown-item">
+                                    <div class="bts-countdown-num" id="hsCountSecs">--</div>
+                                    <div class="bts-countdown-label">Secs</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Watch Live CTA -->
+                        <div class="bts-register-col">
+                            <div class="bts-register-header">
+                                <span class="bts-register-title">Watch Live</span>
+                                <span class="bts-register-secure">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                    Live Stream
+                                </span>
+                            </div>
+
+                            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+
+                                <!-- Icon -->
+                                <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(201,168,78,0.15); display: flex; align-items: center; justify-content: center;">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <h3 style="color: #ffffff; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Stream From Anywhere</h3>
+                                    <p style="color: #a0b8d0; font-size: 0.9rem; line-height: 1.5; max-width: 280px; margin: 0 auto;">Join millions worldwide for <strong style="color: #C9A84E;">3 days of healing</strong>. Watch live on YouTube or join us in person at Loveworld Birmingham.</p>
+                                </div>
+
+                                <!-- YouTube CTA -->
+                                <a href="https://www.youtube.com/channel/UC75YCZejBWbqSv48RVIRi0w/live" target="_blank" class="bts-btn-register" style="width: 100%; justify-content: center; padding: 1.1rem 2rem; font-size: 1.1rem; background: linear-gradient(135deg, #FF0000, #CC0000, #FF0000); color: #ffffff;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg>
+                                    Watch on YouTube →
+                                </a>
+
+                                <!-- Website Live CTA -->
+                                <a href="live.html" class="bts-btn-external" style="width: 100%; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                                    Watch on Our Website
+                                </a>
+
+                                <p style="color: #5a7a94; font-size: 0.75rem; margin: 0;">Free · Open to all · No registration required</p>
+
+                            </div>
+                        </div>
+
+
+                    </div><!-- /bts-grid -->
+
+                </div><!-- /bts-hero-inner -->
+            </div><!-- /hsEvent -->
+
 
             <div class="events-list">
                 <!-- Event 1 - Sunday Services -->
@@ -190,28 +943,8 @@
                     </div>
                 </article>
 
-                <!-- Event 4 - Total Experience -->
-                <article class="event-item">
-                    <div class="event-date">
-                        <span class="event-day">22</span>
-                        <span class="event-month">Feb</span>
-                    </div>
-                    <div class="event-details">
-                        <h3>Total Experience</h3>
-                        <div class="event-meta">
-                            <span><i data-lucide="clock" size="16"></i> 10:00 AM</span>
-                            <span><i data-lucide="map-pin" size="16"></i> Main Hall</span>
-                        </div>
-                        <p>Experience the power and presence of God in this special service. A time of worship,
-                            teaching, and transformation.</p>
-                        <a href="https://kingsforms.online/form/respond/LWF-KS721313720001" target="_blank"
-                            style="color: var(--color-accent); font-weight: 600; margin-top: 0.5rem; display: inline-block;">Register
-                            Now &rarr;</a>
-                    </div>
-                </article>
             </div>
         </div>
-    </section>
     </section>
 
     <!-- Footer -->
@@ -232,19 +965,44 @@
                 <h4 style="color: var(--color-text-white);">Contact</h4>
                 <p style="color: #999; font-size: 0.9rem;">38 Smith Street, Birmingham B19 3EN</p>
                 <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
-                    <a href="mailto:info@blwbirmingham.org" style="color: #ccc;">info@blwbirmingham.org</a>
+                    <a href="mailto:info@loveworldbirmingham.org" style="color: #ccc;">info@loveworldbirmingham.org</a>
                 </p>
                 <p style="color: #999; font-size: 0.9rem; margin-top: 0.25rem;">
-                    <a href="tel:+447982611020" style="color: #ccc;">+44 7982 611020</a><br>
+                    <a href="tel:+447540849509" style="color: #ccc;">+44 7540 849509</a><br>
                     <a href="tel:+447482299317" style="color: #ccc;">+44 7482 299317</a>
                 </p>
             </div>
             <div>
                 <h4 style="color: var(--color-text-white);">Connect</h4>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"><i data-lucide="facebook" size="20" color="#999"></i></a>
-                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"><i data-lucide="instagram" size="20" color="#999"></i></a>
-                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"><i data-lucide="youtube" size="20" color="#999"></i></a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="https://www.facebook.com/loveworldbirmingham/" target="_blank" aria-label="Facebook"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#1877F2'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/loveworld_birmingham/" target="_blank" aria-label="Instagram"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#E4405F'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@loveworldbirmingham839" target="_blank" aria-label="YouTube"
+                        style="color: #999; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'"
+                        onmouseout="this.style.color='#999'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -253,44 +1011,141 @@
             &copy; 2026 Loveworld Birmingham. All rights reserved.
         </div>
     </footer>
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i data-lucide="arrow-up" size="24"></i>
-</button>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up" size="24"></i>
+    </button>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/447982611020" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-        <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-    </svg>
-</a>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/447540849509" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
 
-<script>
-    // Back to Top Button
-    const backToTop = document.getElementById('backToTop');
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
 
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
             });
-        });
-    }
-</script>
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
     <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script>
         lucide.createIcons();
+
+        // Auto-hide past events
+        // Any element with a data-event-date="YYYY-MM-DD" attribute will be
+        // automatically hidden once the date has passed.
+        // Recurring events (without data-event-date) are never hidden.
+        (function() {
+            var now = new Date();
+            // Set to start of today so events are visible on their actual day
+            var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+            var datedEvents = document.querySelectorAll('[data-event-date]');
+            datedEvents.forEach(function(el) {
+                var dateStr = el.getAttribute('data-event-date');
+                if (!dateStr) return;
+                var parts = dateStr.split('-');
+                var eventDate = new Date(parts[0], parts[1] - 1, parts[2]);
+                if (eventDate < today) {
+                    el.style.display = 'none';
+                }
+            });
+        })();
+
+        // ── Back to School Countdown Timer ──
+        (function() {
+            var eventDate = new Date(2026, 7, 23, 10, 0, 0); // 23 Aug 2026, 10:00 AM
+            var daysEl = document.getElementById('btsCountDays');
+            var hoursEl = document.getElementById('btsCountHours');
+            var minsEl = document.getElementById('btsCountMins');
+            var secsEl = document.getElementById('btsCountSecs');
+
+            if (!daysEl) return;
+
+            function update() {
+                var now = new Date();
+                var diff = eventDate.getTime() - now.getTime();
+
+                if (diff <= 0) {
+                    daysEl.textContent = '0';
+                    hoursEl.textContent = '0';
+                    minsEl.textContent = '0';
+                    secsEl.textContent = '0';
+                    return;
+                }
+
+                var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                var s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                daysEl.textContent = d < 10 ? '0' + d : d;
+                hoursEl.textContent = h < 10 ? '0' + h : h;
+                minsEl.textContent = m < 10 ? '0' + m : m;
+                secsEl.textContent = s < 10 ? '0' + s : s;
+            }
+
+            // Call immediately on load to prevent rendering dashes on mobile
+            update();
+            setInterval(update, 1000);
+        })();
+
+        // ── Healing Streams Countdown Timer ──
+        (function() {
+            var eventDate = new Date(2026, 9, 23, 16, 0, 0); // 23 Oct 2026, 4:00 PM (month is 0-indexed, so 9 = October)
+            var daysEl = document.getElementById('hsCountDays');
+            var hoursEl = document.getElementById('hsCountHours');
+            var minsEl = document.getElementById('hsCountMins');
+            var secsEl = document.getElementById('hsCountSecs');
+
+            if (!daysEl) return;
+
+            function update() {
+                var now = new Date();
+                var diff = eventDate.getTime() - now.getTime();
+
+                if (diff <= 0) {
+                    daysEl.textContent = '0';
+                    hoursEl.textContent = '0';
+                    minsEl.textContent = '0';
+                    secsEl.textContent = '0';
+                    return;
+                }
+
+                var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                var s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                daysEl.textContent = d < 10 ? '0' + d : d;
+                hoursEl.textContent = h < 10 ? '0' + h : h;
+                minsEl.textContent = m < 10 ? '0' + m : m;
+                secsEl.textContent = s < 10 ? '0' + s : s;
+            }
+
+            update();
+            setInterval(update, 1000);
+        })();
+
     </script>
 </body>
 

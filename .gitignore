@@ -1,0 +1,13 @@
+# Deployment scripts - these contain SFTP credentials. Never commit.
+upload_all.exp
+upload_convention.exp
+upload_events.exp
+upload_live.exp
+upload_live.sftp
+upload_sftp.py
+upload_ftp.txt
+check_remote.exp
+
+# macOS junk
+.DS_Store
+**/.DS_Store

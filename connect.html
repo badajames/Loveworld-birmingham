@@ -137,6 +137,32 @@
         .thanks h2 { color: var(--color-primary); margin: 0 0 0.75rem; }
         .thanks p { color: var(--color-text-light); margin: 0 0 1.5rem; }
 
+        .field textarea {
+            width: 100%;
+            padding: 0.85rem 0.9rem;
+            font: inherit;
+            font-size: 1rem;
+            line-height: 1.55;
+            color: var(--color-text-main);
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 110px;
+        }
+        .field textarea:focus {
+            outline: 3px solid rgba(212, 175, 55, 0.45);
+            outline-offset: 1px;
+            border-color: var(--color-accent);
+        }
+        .prayer-intro {
+            font-size: 0.88rem;
+            color: var(--color-text-light);
+            margin: 0 0 0.55rem;
+            line-height: 1.5;
+        }
+
         .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
 
         @media (max-width: 600px) {
@@ -229,6 +255,21 @@
                     </datalist>
                 </div>
 
+                <div class="field">
+                    <label for="whatsapp">WhatsApp number <span class="optional">(optional)</span></label>
+                    <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel"
+                           maxlength="24" placeholder="+44 7700 900000" inputmode="tel">
+                </div>
+
+                <div class="field">
+                    <label for="prayer">Is there anything we can pray with you about?
+                        <span class="optional">(optional)</span></label>
+                    <p class="prayer-intro">Whatever you write here is read by our pastoral team and
+                        kept in confidence. You do not have to fill this in.</p>
+                    <textarea id="prayer" name="prayer" maxlength="1500"
+                              placeholder="Share as much or as little as you want to."></textarea>
+                </div>
+
                 <div class="hp" aria-hidden="true">
                     <label for="website">Leave this field empty</label>
                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -236,9 +277,10 @@
 
                 <div class="consent">
                     <input type="checkbox" id="consent" name="consent" required>
-                    <label for="consent">Yes, Loveworld Birmingham may email me about online services
-                        and special events. We will not share my details with anyone else and I can
-                        unsubscribe at any time.</label>
+                    <label for="consent">Yes, Loveworld Birmingham may contact me by email, or by
+                        WhatsApp if I have given a number, about online services and special events.
+                        We will not share my details with anyone else and I can unsubscribe at any
+                        time.</label>
                 </div>
 
                 <button type="submit" class="submit-btn" id="submitBtn">Keep me connected</button>
@@ -250,7 +292,7 @@
             <div class="thanks" id="thanks">
                 <div class="tick"><i data-lucide="check" style="width:30px;height:30px;"></i></div>
                 <h2>You're connected</h2>
-                <p>Thank you. We will be in touch with details of our next online service.
+                <p id="thanksText">Thank you. We will be in touch with details of our next online service.
                    God bless you.</p>
                 <a href="events.html" class="btn btn-accent">See what's coming up</a>
             </div>
@@ -345,6 +387,8 @@
                 var firstName = document.getElementById('firstName').value.trim();
                 var email = document.getElementById('email').value.trim();
                 var country = document.getElementById('country').value.trim();
+                var whatsapp = document.getElementById('whatsapp').value.trim();
+                var prayer = document.getElementById('prayer').value.trim();
                 var consent = document.getElementById('consent').checked;
                 var website = document.getElementById('website').value;
 
@@ -372,6 +416,8 @@
                         firstName: firstName,
                         email: email,
                         country: country,
+                        whatsapp: whatsapp,
+                        prayer: prayer,
                         consent: consent,
                         website: website,
                         source: 'connect.html'
@@ -381,6 +427,11 @@
                 .then(function (data) {
                     if (data && data.ok) {
                         form.style.display = 'none';
+                        if (prayer) {
+                            document.getElementById('thanksText').textContent =
+                                'Thank you. Your prayer request has been passed to our pastoral team, ' +
+                                'and we will be in touch with details of our next online service. God bless you.';
+                        }
                         thanks.style.display = 'block';
                         if (window.lucide) lucide.createIcons();
                         thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });

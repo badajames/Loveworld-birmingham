@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stay Connected | Loveworld Birmingham</title>
+    <title>Send Us Your Prayer Request | Loveworld Birmingham</title>
     <meta name="description" content="Watching Healing Streams with Pastor Chris? Leave your details and we will invite you to our online services and special events.">
     <link rel="canonical" href="https://loveworldbirmingham.org/connect">
 
@@ -197,9 +197,10 @@
 
     <header class="connect-hero">
         <div class="container">
-            <h1>Stay Connected<span>with Loveworld Birmingham</span></h1>
-            <p>Watching Healing Streams with Pastor Chris? Leave your details below and we will invite
-               you to our online services and special events. It takes about twenty seconds.</p>
+            <h1>Send Us Your<span>Prayer Request</span></h1>
+            <p>Watching Healing Streams with Pastor Chris? Tell us what you are believing God for and
+               our pastoral team will pray with you by name. We will also keep you posted about our
+               online services. It takes less than a minute.</p>
         </div>
     </header>
 
@@ -208,6 +209,17 @@
             <div class="form-error" id="formError" role="alert"></div>
 
             <form id="connectForm" novalidate>
+                <div class="field">
+                    <label for="prayer">What can we pray with you about?</label>
+                    <p class="prayer-intro">Read only by our pastoral team and kept in confidence.
+                        Share as much or as little as you want to.</p>
+                    <textarea id="prayer" name="prayer" maxlength="1500"
+                              placeholder="I am believing God for..."></textarea>
+                </div>
+
+                <p class="prayer-intro" style="margin-top:-0.4rem;">So we know who we are praying
+                    for, and where to reach you:</p>
+
                 <div class="field">
                     <label for="firstName">First name</label>
                     <input type="text" id="firstName" name="firstName" autocomplete="given-name"
@@ -261,15 +273,6 @@
                            maxlength="24" placeholder="+44 7700 900000" inputmode="tel">
                 </div>
 
-                <div class="field">
-                    <label for="prayer">Is there anything we can pray with you about?
-                        <span class="optional">(optional)</span></label>
-                    <p class="prayer-intro">Whatever you write here is read by our pastoral team and
-                        kept in confidence. You do not have to fill this in.</p>
-                    <textarea id="prayer" name="prayer" maxlength="1500"
-                              placeholder="Share as much or as little as you want to."></textarea>
-                </div>
-
                 <div class="hp" aria-hidden="true">
                     <label for="website">Leave this field empty</label>
                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -283,7 +286,7 @@
                         time.</label>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn">Keep me connected</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Send my prayer request</button>
 
                 <p class="form-note">We will only ever email you about our own services and events.
                     Read our <a href="privacy.html">privacy notice</a>.</p>
